@@ -48,6 +48,10 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            label = "Default";
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+
             bindings = <
     &kp ESC    &kp Q        &kp W        &kp F       &kp P         &kp B                                       &kp J         &kp L        &lt WINNAV U  &kp Y       &kp SEMI    &kp BSLH
     &kp TAB    &hm LCTL A   &hm LGUI R   &hm LALT S  &hm LSHIFT T  &kp G            &kp LA(TAB)                &lt MOUSE M   &hm LCTL N   &hm LCTL E    &hm LCTL I  &hm LCTL O  &kp SQT
@@ -57,6 +61,10 @@
         };
 
         nav_layer {
+            label = "Navigation";
+            
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            
             bindings = <
     &trans     &kp ESC      &kp PG_UP    &kp UP      &kp PG_DN     &trans                                      &kp ASTRK     &kp KP_N7    &kp KP_N8     &kp KP_N8   &kp PLUS    &trans
     &trans     &kp HOME     &kp LEFT     &kp DOWN    &kp RIGHT     &kp END              &trans                 &kp FSLH      &kp KP_N4    &kp KP_N5     &kp KP_N6   &kp MINUS   &trans
@@ -66,6 +74,10 @@
         };
 
         sym_layer {
+            label = "Symbols";
+            
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            
             bindings = <
     &trans     &kp EXCL     &kp AT       &kp HASH        &kp DLLR         &kp PRCNT                                   &kp CARET     &kp AMPS          &kp ASTRK     &kp UNDER   &kp EQUAL   &trans
     &trans     &kp MINUS    &kp LBKT     &kp LBRC        &kp LPAR         &kp LT                &trans                &kp GT        &kp RPAR          &kp RBRC      &kp RBKT    &kp PLUS    &trans
@@ -75,6 +87,8 @@
         };
 
         func_layer {
+            label = "Function";
+            
             bindings = <
     &trans     &trans       &kp LS(PG_UP) &kp LS(UP)   &kp LS(PG_DN) &trans                                      &kp C_PLAY_PAUSE &kp F7       &kp F8        &kp F9      &kp F10     &trans
     &trans     &kp LS(HOME) &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT) &kp LS(END)           &trans                &kp K_VOL_UP     &kp F4       &kp F5        &kp F6      &kp F11     &trans
@@ -84,6 +98,10 @@
         };
 
         media_layer {
+            label = "Media";
+            
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            
             bindings = <
     &trans     &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &trans            &trans                                      &rgb_ug RGB_SPI  &trans     &trans     &trans   &trans    &trans
     &trans     &trans           &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI   &trans                &trans                &bt BT_CLR       &bt BT_PRV &bt BT_NXT &trans   &trans    &trans
@@ -93,6 +111,10 @@
         };
 
         mouse_layer {
+            label = "Mouse";
+            
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            
             bindings = <
     &trans     &reset      &trans      &trans      &trans      &trans                                           &trans      &trans      &trans      &trans      &trans      &trans
     &trans     &trans      &trans      &trans      &trans      &trans                   &trans                  &trans      &trans      &trans      &trans      &trans      &trans
@@ -102,6 +124,10 @@
         };
 
         winnav_layer {
+            label = "Win Navigation";
+            
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            
             bindings = <
     &trans     &trans       &trans       &kp LG(UP)   &trans        &trans                                      &trans      &trans      &trans      &trans      &trans      &trans
     &trans     &trans       &kp LG(LEFT) &kp LG(DOWN) &kp LG(RIGHT) &trans                &trans                &trans      &trans      &trans      &trans      &trans      &trans
