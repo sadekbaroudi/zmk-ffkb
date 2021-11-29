@@ -13,4 +13,5 @@
 #
 ---
 include:
-  - board: ffkb
+  - board: nice_nano_v2
+  - shield: ffkb
