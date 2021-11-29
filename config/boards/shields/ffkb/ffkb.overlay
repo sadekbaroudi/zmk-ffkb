@@ -15,8 +15,8 @@
     encoder_1: encoder_1 {
         compatible = "alps,ec11";
         label = "Encoder 1";
-        a-gpios = <&pro_micro 32 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        a-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         resolution = <4>;
         status = "okay";
     };
@@ -24,8 +24,8 @@
     encoder_2: encoder_1 {
         compatible = "alps,ec11";
         label = "Encoder 2";
-        a-gpios = <&pro_micro 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 33 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         resolution = <4>;
         status = "okay";
     };
@@ -33,8 +33,8 @@
     encoder_3: encoder_1 {
         compatible = "alps,ec11";
         label = "Encoder 3";
-        a-gpios = <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         resolution = <4>;
         status = "okay";
     };
@@ -45,23 +45,23 @@
         diode-direction = "col2row";
 
         col-gpios
-            = <&pro_micro 12 GPIO_ACTIVE_HIGH> // col 0
-            , <&pro_micro 11 GPIO_ACTIVE_HIGH> // col 1
-            , <&pro_micro 10 GPIO_ACTIVE_HIGH> // col 2
-            , <&pro_micro 9 GPIO_ACTIVE_HIGH>  // col 3
-            , <&pro_micro 8 GPIO_ACTIVE_HIGH>  // col 4
-            , <&pro_micro 7 GPIO_ACTIVE_HIGH>  // col 5
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH> // col 6
-            , <&pro_micro 15 GPIO_ACTIVE_HIGH> // col 7
+            = <&pro_micro 9 GPIO_ACTIVE_HIGH> // col 0
+            , <&pro_micro 8 GPIO_ACTIVE_HIGH> // col 1
+            , <&pro_micro 7 GPIO_ACTIVE_HIGH> // col 2
+            , <&pro_micro 6 GPIO_ACTIVE_HIGH>  // col 3
+            , <&pro_micro 5 GPIO_ACTIVE_HIGH>  // col 4
+            , <&pro_micro 4 GPIO_ACTIVE_HIGH>  // col 5
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH> // col 6
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH> // col 7
             ;
 
         row-gpios
-            = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 0
-            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 1
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 2
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 3
-            , <&pro_micro 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 4
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 5
+            = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 0
+            , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 1
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 2
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 3
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 4
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 5
             ;
     };
 
