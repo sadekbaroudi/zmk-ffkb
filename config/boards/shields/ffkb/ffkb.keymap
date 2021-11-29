@@ -27,20 +27,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <125>;
+            tapping-term-ms = <150>;
             quick_tap_ms = <0>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-        sr: layer_shifts {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFTS";
-            #binding-cells = <2>;
-            tapping-term-ms = <75>;
-            quick_tap_ms = <0>;
-            retro-tap;
-            flavor = "balanced";
-            bindings = <&kp>, <&to>;
         };
     };
 
@@ -54,7 +44,7 @@
 
             bindings = <
     &kp ESC    &kp Q        &kp W        &kp F       &kp P         &kp B                                       &kp J         &kp L        &lt WINNAV U  &kp Y       &kp SEMI    &kp BSLH
-    &kp TAB    &hm LCTL A   &hm LGUI R   &hm LALT S  &hm LSHIFT T  &kp G            &kp LA(TAB)                &lt MOUSE M   &hm LCTL N   &hm LCTL E    &hm LCTL I  &hm LCTL O  &kp SQT
+    &kp TAB    &hm LCTL A   &hm LGUI R   &hm LALT S  &hm LSHIFT T  &kp G            &kp LA(TAB)                &lt MOUSE M   &hm LSHIFT N &hm LCTL E    &hm LCTL I  &hm LCTL O  &kp SQT
     &kp LSHIFT &kp Z        &kp X        &kp C       &kp D         &kp V                                       &kp K         &kp H        &kp COMMA     &kp DOT     &kp FSLH    &kp RCTRL
                                          &kp C_MUTE  &kp DEL       &lt NAV RET  &lt FUNC TAB  &lt MEDIA BSPC   &lt SYM SPACE &kp SQT      &kp LC(BSPC)
             >;
