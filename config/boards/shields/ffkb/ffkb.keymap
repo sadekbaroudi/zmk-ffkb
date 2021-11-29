@@ -94,7 +94,7 @@
             bindings = <
     &trans     &trans       &kp LS(PG_UP) &kp LS(UP)   &kp LS(PG_DN) &trans                                      &kp C_PLAY_PAUSE &kp F7       &kp F8        &kp F9      &kp F10     &trans
     &trans     &kp LS(HOME) &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT) &kp LS(END)           &trans                &kp K_VOL_UP     &kp F4       &kp F5        &kp F6      &kp F11     &trans
-    &trans     &trans       &trans        &trans       &trans        &C_MUTE                                     &kp K_VOL_DN     &kp F1       &kp F2        &kp F3      &kp F12     &trans
+    &trans     &trans       &trans        &trans       &trans        &kp C_MUTE                                  &kp K_VOL_DN     &kp F1       &kp F2        &kp F3      &kp F12     &trans
                                           &trans       &trans        &trans        &trans         &trans         &trans           &kp SPACE    &trans
             >;
         };
