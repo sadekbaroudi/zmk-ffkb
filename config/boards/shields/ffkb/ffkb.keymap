@@ -48,8 +48,6 @@
     &kp LSHIFT &kp Z        &kp X        &kp C       &kp D         &kp V                                       &kp K         &kp H        &kp COMMA     &kp DOT     &kp FSLH    &kp RCTRL
                                          &kp C_MUTE  &kp DEL       &lt NAV RET  &lt FUNC TAB  &lt MEDIA BSPC   &lt SYM SPACE &kp SQT      &kp LC(BSPC)
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         nav_layer {
@@ -59,8 +57,6 @@
     &trans     &trans       &trans       &trans      &trans        &trans                                      &kp EQUAL     &kp KP_N1    &kp KP_N2     &kp KP_N3   &kp KP_N0   &trans
                                          &trans      &trans        &trans       &kp TAB       &kp BSPC         &trans        &trans       &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         sym_layer {
@@ -70,8 +66,6 @@
     &trans     &kp CAPS     &kp GRAVE    &kp LC(LS(TAB)) &kp LC(LG(LEFT)) &capsword                                   &trans        &kp LC(LG(RIGHT)) &kp LC(TAB)   &trans      &kp BSLH    &trans
                                          &trans          &trans           &kp RET       &kp DEL        &kp BSPC       &trans        &trans            &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         func_layer {
@@ -81,8 +75,6 @@
     &trans     &trans       &trans        &trans       &trans        &C_MUTE                                     &kp K_VOL_DN     &kp F1       &kp F2        &kp F3      &kp F12     &trans
                                           &trans       &trans        &trans        &trans         &trans         &trans           &kp SPACE    &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         media_layer {
@@ -92,8 +84,6 @@
     &trans     &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_SAD &rgb_ug RGB_BRD   &trans                                      &rgb_ug RGB_SPD  &trans    &trans     &trans   &trans    &trans
                                                  &trans          &trans            &trans        &trans         &trans         &trans        &trans       &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         mouse_layer {
@@ -103,8 +93,6 @@
     &trans     &trans      &trans      &trans      &trans      &trans                                           &trans      &trans      &trans      &trans      &trans      &trans
                                          &trans      &trans        &trans        &trans         &trans         &trans        &trans       &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         winnav_layer {
@@ -114,8 +102,6 @@
     &trans     &trans       &trans       &trans       &trans        &trans                                      &trans      &trans      &trans      &trans      &trans      &trans
                                          &trans       &trans        &trans        &trans         &trans         &trans        &trans       &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
