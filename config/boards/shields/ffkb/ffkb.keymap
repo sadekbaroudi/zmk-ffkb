@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
 #define NAV     1
@@ -15,6 +16,11 @@
 };
 
 / {
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_1 &encoder_2 &encoder_3>;
+    };
 
     behaviors {
         hm: homerow_mods {
@@ -32,7 +38,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <75>;
             quick_tap_ms = <0>;
-	    retro-tap;
+            retro-tap;
             flavor = "balanced";
             bindings = <&kp>, <&to>;
         };
@@ -79,10 +85,10 @@
 
         media_layer {
             bindings = <
-    &trans     &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &trans            &trans                                      &rgb_ug RGB_SPI  &trans    &trans     &trans   &trans    &trans
-    &trans     &trans           &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI   &trans                &trans                &trans           &trans    &trans     &trans   &trans    &trans
-    &trans     &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_SAD &rgb_ug RGB_BRD   &trans                                      &rgb_ug RGB_SPD  &trans    &trans     &trans   &trans    &trans
-                                                 &trans          &trans            &trans        &trans         &trans         &trans        &trans       &trans
+    &trans     &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &trans            &trans                                      &rgb_ug RGB_SPI  &trans     &trans     &trans   &trans    &trans
+    &trans     &trans           &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI   &trans                &trans                &bt BT_CLR       &bt BT_PRV &bt BT_NXT &trans   &trans    &trans
+    &trans     &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_SAD &rgb_ug RGB_BRD   &trans                                      &rgb_ug RGB_SPD  &trans     &trans     &trans   &trans    &trans
+                                                 &trans          &trans            &trans        &trans         &trans         &trans           &trans     &trans
             >;
         };
 
@@ -91,7 +97,7 @@
     &trans     &reset      &trans      &trans      &trans      &trans                                           &trans      &trans      &trans      &trans      &trans      &trans
     &trans     &trans      &trans      &trans      &trans      &trans                   &trans                  &trans      &trans      &trans      &trans      &trans      &trans
     &trans     &trans      &trans      &trans      &trans      &trans                                           &trans      &trans      &trans      &trans      &trans      &trans
-                                         &trans      &trans        &trans        &trans         &trans         &trans        &trans       &trans
+                                         &trans      &trans        &trans        &trans         &trans          &trans      &trans      &trans
             >;
         };
 
