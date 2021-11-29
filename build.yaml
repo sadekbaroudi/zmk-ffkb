@@ -13,4 +13,4 @@
 #
 ---
 include:
-  - board: planck_rev6
+  - board: ffkb
