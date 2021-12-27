@@ -20,7 +20,7 @@
 &lt {
     tapping-term-ms = <175>;
     quick_tap_ms = <200>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
 };
 
 / {
