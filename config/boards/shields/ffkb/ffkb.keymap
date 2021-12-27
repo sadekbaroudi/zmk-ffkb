@@ -17,12 +17,6 @@
     continue-list = <UNDERSCORE MINUS>;
 };
 
-&lt {
-    tapping-term-ms = <175>;
-    quick_tap_ms = <200>;
-    flavor = "balanced";
-};
-
 / {
     combos {
         compatible = "zmk,combos";
