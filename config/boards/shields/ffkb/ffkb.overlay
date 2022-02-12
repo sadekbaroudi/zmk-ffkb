@@ -36,8 +36,8 @@
     encoder_3: encoder_3 {
         compatible = "alps,ec11";
         label = "Encoder 3";
-        a-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         resolution = <4>;
         status = "okay";
     };
