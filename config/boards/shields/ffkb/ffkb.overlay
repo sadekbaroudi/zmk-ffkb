@@ -13,31 +13,6 @@
         zmk,matrix_transform = &default_transform;
     };
 
-    // Left encoder
-    encoder_1: encoder_1 {
-        compatible = "alps,ec11";
-        label = "Encoder 1";
-        a-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <4>;
-        status = "okay";
-    };
-
-    // Right encoder
-    encoder_2: encoder_2 {
-        compatible = "alps,ec11";
-        label = "Encoder 2";
-        a-gpios = <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <4>;
-        status = "okay";
-    };
-
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder_1 &encoder_2>;
-    };
-
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
