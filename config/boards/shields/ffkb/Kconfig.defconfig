@@ -6,7 +6,4 @@ if SHIELD_FFKB
 config ZMK_KEYBOARD_NAME
     default "ffkb"
 
-config I2C
-    default y
-
 endif
