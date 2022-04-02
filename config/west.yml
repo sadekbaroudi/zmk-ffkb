@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: cdc-mkb
-      revision: mouse-pim447
+      revision: cdc
       import: app/west.yml
   self:
     path: config
