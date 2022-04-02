@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/zmk/trackball_pim447.h>
 
 / {
     chosen {
@@ -32,19 +33,9 @@
         status = "okay";
     };
 
-    // Center encoder
-    encoder_3: encoder_3 {
-        compatible = "alps,ec11";
-        label = "Encoder 3";
-        a-gpios = <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <4>;
-        status = "okay";
-    };
-
     sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&encoder_1 &encoder_2 &encoder_3>;
+        sensors = <&encoder_1 &encoder_2>;
     };
 
     kscan0: kscan_0 {
@@ -87,4 +78,17 @@
     };
 };
 
+&i2c1 {
+    status = "okay";
+
+// Uses sda/scl
+// a-gpios = <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+// b-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+    trackball_pim447@a {
+        compatible = "pimoroni,trackball_pim447";
+        reg = <0xa>;
+        label = "TRACKBALL_PIM447";
+    };
+};
 
