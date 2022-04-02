@@ -78,17 +78,21 @@
     };
 };
 
-&i2c1 {
+&pro_micro_i2c {
     status = "okay";
-
-// Uses sda/scl
-// a-gpios = <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-// b-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
     trackball_pim447@a {
         compatible = "pimoroni,trackball_pim447";
         reg = <0xa>;
         label = "TRACKBALL_PIM447";
+        move-factor = <2>;      // Increase pointer velocity (default: 1)
+        invert-move-x;          // Invert pointer X axis (left is right, and vice versa)
+        invert-move-y;          // Invert pointer Y axis (up is down, and vice versa)
+        button = <0>;           // Set to 1 for right click (default: 0, ie. left-click)
+        //swap-axes;              // Swap X and Y axes (horizontal is vertical, and vice versa)
+        scroll-divisor = <1>;   // Increase wheel velocity (default: 2)
+        invert-scroll-x;        // Invert wheel X axis (left is right, and vice versa)
+        invert-scroll-y;        // Invert wheel Y axis (up is down, and vice versa)
+        mode = <PIM447_MOVE>;   // PIM447_SCROLL for scrolling (default: PIM447_MOVE for mouse)
     };
 };
 
