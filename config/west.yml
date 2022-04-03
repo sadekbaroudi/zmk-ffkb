@@ -4,9 +4,11 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: cdc-mkb
       url-base: https://github.com/cdc-mkb
+    - name: sadekbaroudi
+      url-base: https://github.com/sadekbaroudi
   projects:
     - name: zmk
-      remote: cdc-mkb
+      remote: sadekbaroudi
       revision: mouse-pim447
       import: app/west.yml
   self:
