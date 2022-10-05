@@ -4,6 +4,8 @@ name: ffkb
 type: shield
 url: https://github.com/sadekbaroudi/ffkb/
 requires: [pro_micro]
+exposes: [i2c_pinnacle]
 features:
   - keys
   - encoder
+
