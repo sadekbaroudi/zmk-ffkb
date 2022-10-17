@@ -1,9 +1,8 @@
 This is the firmware for the ffkb:
-* https://fingerpunch.xyz/product/faux-fox-keyboard/
+* https://fingerpunch.xyz/product/faux-fox-keyboard-v3/
 * https://discord.gg/ewS6xbCgPb
 * https://github.com/sadekbaroudi/fingerpunch/tree/master/ffkb
 
-Note that this is pre-configured for 3 rotary encoders, though the ffkb supports an OLED or pimoroni trackball in the center. You may need to adjust the firmware to support them. If you enable another feature, be sure to disable the encoder_3 since it shares pins with the other features.
+If you are using the ffkb v1 or v2, please see the v1_v2 branch in this repository
 
-For an example of firmware that supports an OLED, see:
-* https://github.com/NCKiser/zmk-ffkb
+Note that this is pre-configured for 2 rotary encoders and rgb.
