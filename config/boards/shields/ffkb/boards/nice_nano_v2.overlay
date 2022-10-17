@@ -27,7 +27,7 @@
     };
 
     cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
-    shift_reg: 595@0 {
+    shift_reg: 595@1 {
         compatible = "zmk,gpio-595";
         status = "okay";
         gpio-controller;
