@@ -25,6 +25,19 @@
                          LED_COLOR_ID_RED
                          LED_COLOR_ID_BLUE>;
     };
+
+    cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
+    shift_reg: 595@0 {
+        compatible = "zmk,gpio-595";
+        status = "okay";
+        gpio-controller;
+        spi-max-frequency = <200000>;
+        reg = <0>;
+        label = "4HC595";
+        #gpio-cells = <2>;
+        ngpios = <8>;
+    };
+
 };
 
 / {
