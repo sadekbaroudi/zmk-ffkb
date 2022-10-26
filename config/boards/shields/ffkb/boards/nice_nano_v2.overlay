@@ -8,6 +8,7 @@
     // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
     sck-pin = <5>;
     miso-pin = <7>;
+    cs-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW, &pro_micro 10 GPIO_ACTIVE_LOW>;
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
@@ -26,7 +27,6 @@
                          LED_COLOR_ID_BLUE>;
     };
 
-    cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
     shift_reg: 595@1 {
         compatible = "zmk,gpio-595";
         status = "okay";
