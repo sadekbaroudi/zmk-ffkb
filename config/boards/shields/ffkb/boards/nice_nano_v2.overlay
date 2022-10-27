@@ -4,10 +4,9 @@
     compatible = "nordic,nrf-spim";
     /* Cannot be used together with i2c0. */
     status = "okay";
-    mosi-pin = <6>;
-    // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-    sck-pin = <5>;
-    miso-pin = <7>;
+    mosi-pin = <32*0+10>;  // P0_10
+    sck-pin = <(32*1+13)>;  // P1_13
+    miso-pin = <(32*1+11)>;  // P1_11
     cs-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW>, <&pro_micro 10 GPIO_ACTIVE_LOW>;
 
     led_strip: ws2812@0 {
