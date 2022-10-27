@@ -1,13 +1,35 @@
 #include <dt-bindings/led/led.h>
 
+&spi0 {
+    compatible = "nordic,nrf-spim";
+    /* Cannot be used together with i2c0. */
+    status = "okay";
+    mosi-pin = <(32*0+10)>;  // P0_10
+    sck-pin = <(32*1+13)>;  // P1_13
+    miso-pin = <(32*1+11)>;  // P1_11
+    cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
+
+    shift_reg: 595@0 {
+        compatible = "zmk,gpio-595";
+        status = "okay";
+        gpio-controller;
+        spi-max-frequency = <200000>;
+        reg = <0>;
+        label = "74HC595";
+        #gpio-cells = <2>;
+        ngpios = <8>;
+    };
+};
+
 &spi1 {
     compatible = "nordic,nrf-spim";
     /* Cannot be used together with i2c0. */
     status = "okay";
-    mosi-pin = <32*0+10>;  // P0_10
-    sck-pin = <(32*1+13)>;  // P1_13
-    miso-pin = <(32*1+11)>;  // P1_11
-    cs-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW>, <&pro_micro 10 GPIO_ACTIVE_LOW>;
+    mosi-pin = <6>;  // P0_06
+    // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+    sck-pin = <5>;  // P0_05
+    miso-pin = <7>;  // P0_07
+    cs-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW>;
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
@@ -25,18 +47,6 @@
                          LED_COLOR_ID_RED
                          LED_COLOR_ID_BLUE>;
     };
-
-    shift_reg: 595@1 {
-        compatible = "zmk,gpio-595";
-        status = "okay";
-        gpio-controller;
-        spi-max-frequency = <200000>;
-        reg = <1>;
-        label = "74HC595";
-        #gpio-cells = <2>;
-        ngpios = <8>;
-    };
-
 };
 
 / {
