@@ -53,10 +53,6 @@
 
 / {
 
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder_1 &encoder_2>;
-    };
 
     behaviors {
         hm: layer_mods {
@@ -99,7 +95,6 @@
         default_layer {
             label = "Default";
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp LC(RIGHT)  LC(LEFT) &inc_dec_kp LC(RIGHT)  LC(LEFT) >;
 
             bindings = <
     &gresc     &kp Q         &kp W        &kp E       &kp R         &kp T                              &kp Y        &kp U          &kp I       &kp O         &kp P         &kp MINUS
@@ -112,7 +107,6 @@
         raise_layer {
             label = "Raise";
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp LG(EQUAL) LG(MINUS) &inc_dec_kp LG(EQUAL) LG(MINUS)>;
 
             bindings = <
     &kp GRAVE   &gresc        &none       &none      &kp LBKT   &kp LBRC                                  &kp RBRC   &kp RBKT        &none       &none      &none      &none
@@ -124,7 +118,6 @@
         lower_layer {
             label = "Lower  ";
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
             bindings = <
     &kp TILDE   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                    &kp N6 &kp N7     &kp N8     &kp N9     &kp N0    &kp EQUAL
@@ -136,7 +129,6 @@
     util_layer {
             label = "Util";
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
             bindings = <
     &kp GRAVE  &kp EXCL &kp AT &kp HASH  &kp DOLLAR &kp PRCNT                                      &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR    &kp EQUAL
