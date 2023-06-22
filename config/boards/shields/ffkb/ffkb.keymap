@@ -8,11 +8,23 @@
 #define DEFAULT 0
 #define NAV     1
 #define SYM     2
-#define FUNC    3
-#define MEDIA   4
-#define MOUSE   5
-#define WINNAV  6
+#define OTH     3
 
+
+#define TAPPING_TERM 200
+#define QUICK_TAP    150
+
+&lt {
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP>;
+};
+
+&mt {
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP>;
+};
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
@@ -22,17 +34,18 @@
         compatible = "zmk,combos";
         combo_undo {
             timeout-ms = <50>;
-            key-positions = <25 26>;
+            key-positions = <26 27>;
             bindings = <&kp LC(Z)>;
         };
+
         combo_q {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
             bindings = <&kp Q>;
         };
         combo_semicolon {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <33 34>;
             bindings = <&kp SEMI>;
         };
     };
@@ -46,9 +59,9 @@
     };
 
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+        hm: layer_mods {
+            compatible = "tap-preferred";
+            label = "LAYER_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
@@ -61,8 +74,22 @@
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             quick_tap_ms = <0>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        tdg: tap_dance_g {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_G";
+            #binding-cells = <0>;
+            tapping-term-ms = <QUICK_TAP>;
+            bindings = <&kp G>, <&caps_word>;
+        };
+        tdh: tap_dance_h {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_M";
+            #binding-cells = <0>;
+            tapping-term-ms = <QUICK_TAP>;
+            bindings = <&kp H>, <&caps_word>;
         };
     };
 
@@ -72,91 +99,50 @@
         default_layer {
             label = "Default";
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp LC(RIGHT)  LC(LEFT) &inc_dec_kp LC(RIGHT)  LC(LEFT) >;
 
             bindings = <
-    &kp ESC    &kp Q        &kp W        &kp F       &kp P         &kp B                                       &kp J         &kp L        &lt WINNAV U  &kp Y       &kp SEMI    &kp BSLH
-    &kp TAB    &hm LCTL A   &hm LGUI R   &hm LALT S  &hs LSHIFT T  &kp G                                       &lt MOUSE M   &hs RSHIFT N &hm RALT E    &hm RGUI I  &hm RCTL O  &kp SQT
-    &kp LSHIFT &kp Z        &kp X        &kp C       &kp D         &kp V                                       &kp K         &kp H        &kp COMMA     &kp DOT     &kp FSLH    &kp RCTRL
-                                         &kp C_MUTE  &kp DEL       &lt NAV RET  &lt FUNC TAB  &lt MEDIA BSPC   &lt SYM SPACE &kp SQT      &kp LC(BSPC)
+    &gresc     &kp Q         &kp W        &kp E       &kp R         &kp T                              &kp Y        &kp U          &kp I       &kp O         &kp P         &kp MINUS
+    &kp TAB    &lt OTH A     &lt SYM S    &lt NAV D   &hs LSHIFT F  &kp G                &trans        &kp H        &hs LSHIFT J   &lt NAV K   &lt SYM L     &lt OTH SEMI  &kp SINGLE_QUOTE
+    &kp LSHIFT &mt LSHIFT Z  &kp X        &kp C       &kp V         &kp B                              &kp N        &kp M          &kp COMMA   &kp DOT       &kp FSLH      &kp BSLH
+                            &trans       &mt LSHFT UNDER  &kp LGUI  &mt LC(LS(LALT)) BSPC                      &mt LC(LS(LALT)) SPACE &mt LG(LC(LS(LALT))) ENTER  &mt RSHFT MINUS &trans
             >;
         };
 
-        nav_layer {
-            label = "Navigation";
-            
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            
+        raise_layer {
+            label = "Raise";
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp LG(EQUAL) LG(MINUS) &inc_dec_kp LG(EQUAL) LG(MINUS)>;
+
             bindings = <
-    &trans     &kp ESC      &kp PG_UP    &kp UP      &kp PG_DN     &trans                                      &kp ASTRK     &kp N7       &kp N8        &kp N9      &kp MINUS   &trans
-    &trans     &kp HOME     &kp LEFT     &kp DOWN    &kp RIGHT     &kp END                                     &kp FSLH      &kp N4       &kp N5        &kp N6      &kp PLUS    &trans
-    &trans     &trans       &trans       &trans      &trans        &trans                                      &kp EQUAL     &kp N1       &kp N2        &kp N3      &kp N0      &trans
-                                         &trans      &trans        &trans       &kp TAB       &kp BSPC         &kp SPACE     &kp DOT      &trans
+    &kp GRAVE   &gresc        &none       &none      &kp LBKT   &kp LBRC                                  &kp RBRC   &kp RBKT        &none       &none      &none      &none
+    &kp GRAVE    &kp GRAVE    &none       &none      &none       &none                &trans              &kp LEFT  &kp DOWN    &kp UP      &kp RIGHT  &kp DQT    &trans
+    &kp LSHIFT &kp TILDE  &none        &kp LG(LS(LC(N3))) &kp LG(LS(LC(N4)))         &trans                             &kp RBKT  &kp MINUS   &kp EQUAL   &kp SQT    &kp BSLH   &trans
+                                        &trans      &kp LCTL  &kp LALT   &kp BSLH                         &kp TAB  &kp EQUAL   &kp PLUS      &trans
             >;
         };
+        lower_layer {
+            label = "Lower  ";
 
-        sym_layer {
-            label = "Symbols";
-            
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            
-            bindings = <
-    &trans     &kp EXCL     &kp AT       &kp HASH        &kp DLLR         &kp PRCNT                                   &kp CARET     &kp AMPS          &kp ASTRK     &kp UNDER   &kp EQUAL   &trans
-    &trans     &kp MINUS    &kp LBKT     &kp LBRC        &kp LPAR         &kp LT                                      &kp GT        &kp RPAR          &kp RBRC      &kp RBKT    &kp PLUS    &trans
-    &trans     &kp CAPS     &kp GRAVE    &kp LC(LS(TAB)) &kp LC(LG(LEFT)) &caps_word                                  &trans        &kp LC(LG(RIGHT)) &kp LC(TAB)   &trans      &kp BSLH    &trans
-                                         &trans          &trans           &kp RET       &kp DEL        &kp BSPC       &trans        &trans            &trans
-            >;
-        };
-
-        func_layer {
-            label = "Function";
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            
-            bindings = <
-    &trans     &trans       &kp LS(PG_UP) &kp LS(UP)   &kp LS(PG_DN) &trans                                      &kp C_PLAY_PAUSE &kp F7       &kp F8        &kp F9      &kp F10     &trans
-    &trans     &kp LS(HOME) &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT) &kp LS(END)                                 &kp K_VOL_UP     &kp F4       &kp F5        &kp F6      &kp F11     &trans
-    &trans     &trans       &trans        &trans       &trans        &kp C_MUTE                                  &kp K_VOL_DN     &kp F1       &kp F2        &kp F3      &kp F12     &trans
-                                          &trans       &trans        &trans        &trans         &trans         &trans           &kp SPACE    &trans
-            >;
-        };
-
-        media_layer {
-            label = "Media";
-            
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            
+
             bindings = <
-    &rgb_ug RGB_COLOR_HSB(0,0,100)         &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &trans            &trans                            &trans             &bt BT_PRV        &bt BT_NXT         &trans         &trans          &trans
-    &rgb_ug RGB_COLOR_HSB(224,100,100)     &trans           &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI   &rgb_ug RGB_SPI                   &bt BT_CLR         &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2   &bt BT_SEL 3    &trans
-    &rgb_ug RGB_COLOR_HSB(278,100,100)     &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_SAD &rgb_ug RGB_BRD   &rgb_ug RGB_SPD                   &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &out OUT_USB   &out OUT_BLE    &trans
-                                                                            &trans          &trans            &trans        &trans         &trans         &trans           &trans     &trans
+    &kp TILDE   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                    &kp N6 &kp N7     &kp N8     &kp N9     &kp N0    &kp EQUAL
+    &kp TILDE   &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_HUI &rgb_ug RGB_BRI   &trans           &kp RBRC    &none   &none          &none   &kp SQT    &trans
+    &kp LSHIFT  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUD &rgb_ug RGB_BRD    &trans                               &rgb_ug RGB_TOG &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD     &trans
+                                        &trans      &trans        &kp LALT      &kp BSPC        &kp LC(LEFT)   &kp LC(UP)    &kp LC(RIGHT)      &trans
             >;
         };
+    util_layer {
+            label = "Util";
 
-        mouse_layer {
-            label = "Mouse";
-            
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP &inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
-            
-            bindings = <
-    &trans     &bootloader &trans      &trans      &trans      &trans                                           &trans      &trans      &trans      &trans      &trans      &trans
-    &trans     &trans      &trans      &trans      &trans      &trans                                           &trans      &trans      &trans      &trans      &trans      &trans
-    &trans     &trans      &trans      &trans      &trans      &trans                                           &trans      &trans      &trans      &trans      &trans      &trans
-                                         &trans      &trans        &trans        &trans         &trans          &trans      &trans      &trans
-            >;
-        };
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
-        winnav_layer {
-            label = "Win Navigation";
-            
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            
             bindings = <
-    &trans     &trans       &trans       &kp LG(UP)   &trans        &trans                                      &trans      &trans      &trans      &trans      &trans      &trans
-    &trans     &trans       &kp LG(LEFT) &kp LG(DOWN) &kp LG(RIGHT) &trans                                      &trans      &trans      &trans      &trans      &trans      &trans
-    &trans     &trans       &trans       &trans       &trans        &trans                                      &trans      &trans      &trans      &trans      &trans      &trans
-                                         &trans       &trans        &trans        &trans         &trans         &trans        &trans       &trans
+    &kp GRAVE  &kp EXCL &kp AT &kp HASH  &kp DOLLAR &kp PRCNT                                      &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR    &kp EQUAL
+    &trans     &bt BT_CLR    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3               &trans           &kp LEFT        &kp DOWN         &kp UP        &kp RIGHT   &kp SQT    &trans
+    &kp LSHIFT &trans   &trans       &trans      &trans       &bootloader                                &bootloader &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD     &trans
+                                        &trans      &trans        &kp LALT      &kp BSPC        &kp LC(LEFT)   &kp LC(UP)    &kp LC(RIGHT)      &trans
             >;
         };
     };
