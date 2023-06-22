@@ -46,15 +46,25 @@
         debounce-release-ms = <5>;
 
         col-gpios
-            = <&shift_reg 1 (GPIO_ACTIVE_HIGH)>
-            , <&shift_reg 0 (GPIO_ACTIVE_HIGH)>
-            , <&shift_reg 2 (GPIO_ACTIVE_HIGH)>
-            , <&shift_reg 4 (GPIO_ACTIVE_HIGH)>
-            , <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
-            , <&shift_reg 5 (GPIO_ACTIVE_HIGH)>
-            , <&shift_reg 6 (GPIO_ACTIVE_HIGH)>
-            , <&shift_reg 7 (GPIO_ACTIVE_HIGH)>
+            = <&pro_micro 8 GPIO_ACTIVE_HIGH> // col 1
+            , <&pro_micro 9 GPIO_ACTIVE_HIGH> // col 0
+            , <&pro_micro 7 GPIO_ACTIVE_HIGH> // col 2
+            , <&pro_micro 5 GPIO_ACTIVE_HIGH>  // col 4
+            , <&pro_micro 6 GPIO_ACTIVE_HIGH>  // col 3
+            , <&pro_micro 4 GPIO_ACTIVE_HIGH>  // col 5
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH> // col 6
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH> // col 7
             ;
+        //col-gpios
+        //    = <&shift_reg 1 (GPIO_ACTIVE_HIGH)>
+        //    , <&shift_reg 0 (GPIO_ACTIVE_HIGH)>
+        //    , <&shift_reg 2 (GPIO_ACTIVE_HIGH)>
+        //    , <&shift_reg 4 (GPIO_ACTIVE_HIGH)>
+        //    , <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
+        //    , <&shift_reg 5 (GPIO_ACTIVE_HIGH)>
+        //    , <&shift_reg 6 (GPIO_ACTIVE_HIGH)>
+        //    , <&shift_reg 7 (GPIO_ACTIVE_HIGH)>
+        //    ;
 
         row-gpios
             = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 0
