@@ -100,7 +100,7 @@
     &gresc     &kp Q         &kp W        &kp E       &kp R         &kp T                              &kp Y        &kp U          &kp I       &kp O         &kp P         &kp MINUS
     &kp TAB    &lt OTH A     &lt SYM S    &lt NAV D   &hs LSHIFT F  &kp G                       &kp H        &hs LSHIFT J   &lt NAV K   &lt SYM L     &lt OTH SEMI  &kp SINGLE_QUOTE
     &kp LSHIFT &mt LSHIFT Z  &kp X        &kp C       &kp V         &kp B                              &kp N        &kp M          &kp COMMA   &kp DOT       &kp FSLH      &kp BSLH
-                            &trans       &mt LSHFT UNDER  &kp LGUI  &mt LC(LS(LALT)) BSPC                      &mt LC(LS(LALT)) SPACE &mt LG(LC(LS(LALT))) ENTER  &mt RSHFT MINUS &trans
+                              &mt LSHFT UNDER  &kp LGUI  &mt LC(LS(LALT)) BSPC                      &mt LC(LS(LALT)) SPACE &mt LG(LC(LS(LALT))) ENTER  &mt RSHFT MINUS
             >;
         };
 
@@ -111,8 +111,8 @@
             bindings = <
     &kp GRAVE   &gresc        &none       &none      &kp LBKT   &kp LBRC                                  &kp RBRC   &kp RBKT        &none       &none      &none      &none
     &kp GRAVE    &kp GRAVE    &none       &none      &none       &none                            &kp LEFT  &kp DOWN    &kp UP      &kp RIGHT  &kp DQT    &trans
-    &kp LSHIFT &kp TILDE  &none        &kp LG(LS(LC(N3))) &kp LG(LS(LC(N4)))         &trans                             &kp RBKT  &kp MINUS   &kp EQUAL   &kp SQT    &kp BSLH   &trans
-                                        &trans      &kp LCTL  &kp LALT   &kp BSLH                         &kp TAB  &kp EQUAL   &kp PLUS      &trans
+    &kp LSHIFT &kp TILDE  &none        &kp LG(LS(LC(N3))) &kp LG(LS(LC(N4)))                                     &kp RBKT  &kp MINUS   &kp EQUAL   &kp SQT    &kp BSLH   &trans
+                                             &kp LCTL  &kp LALT   &kp BSLH                         &kp TAB  &kp EQUAL   &kp PLUS
             >;
         };
         lower_layer {
@@ -122,8 +122,8 @@
             bindings = <
     &kp TILDE   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                    &kp N6 &kp N7     &kp N8     &kp N9     &kp N0    &kp EQUAL
     &kp TILDE   &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_HUI &rgb_ug RGB_BRI              &kp RBRC    &none   &none          &none   &kp SQT    &trans
-    &kp LSHIFT  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUD &rgb_ug RGB_BRD    &trans                               &rgb_ug RGB_TOG &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD     &trans
-                                        &trans      &trans        &kp LALT      &kp BSPC        &kp LC(LEFT)   &kp LC(UP)    &kp LC(RIGHT)      &trans
+    &kp LSHIFT  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUD &rgb_ug RGB_BRD                                  &rgb_ug RGB_TOG &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD     &trans
+                                              &trans        &kp LALT      &kp BSPC        &kp LC(LEFT)   &kp LC(UP)    &kp LC(RIGHT)
             >;
         };
     util_layer {
@@ -134,7 +134,7 @@
     &kp GRAVE  &kp EXCL &kp AT &kp HASH  &kp DOLLAR &kp PRCNT                                      &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR    &kp EQUAL
     &trans     &bt BT_CLR    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3                          &kp LEFT        &kp DOWN         &kp UP        &kp RIGHT   &kp SQT    &trans
     &kp LSHIFT &trans   &trans       &trans      &trans       &bootloader                                &bootloader &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD     &trans
-                                        &trans      &trans        &kp LALT      &kp BSPC        &kp LC(LEFT)   &kp LC(UP)    &kp LC(RIGHT)      &trans
+                                             &trans        &kp LALT      &kp BSPC        &kp LC(LEFT)   &kp LC(UP)    &kp LC(RIGHT)     
             >;
         };
     };
