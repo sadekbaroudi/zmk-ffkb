@@ -109,9 +109,9 @@
 
 
             bindings = <
-    &kp GRAVE   &gresc        &none       &none      &kp LBKT   &kp LBRC                                  &kp RBRC   &kp RBKT        &none       &none      &none      &none
+    &kp GRAVE   &gresc        &none       &none      &kp LBKT   &kp LBRC                                  &kp RBRC   &kp RBKT        &none       &none      &none     &kp LBKT  
     &kp GRAVE    &kp GRAVE    &none       &none      &none       &none                            &kp LEFT  &kp DOWN    &kp UP      &kp RIGHT  &kp DQT    &trans
-    &kp LSHIFT &kp TILDE  &none   &kp LG(LS(LC(N3))) &kp LG(LS(LC(N4)))  &kp LBKT            &kp RBKT  &kp MINUS   &kp EQUAL   &kp SQT    &kp BSLH  
+    &kp LSHIFT &kp TILDE  &none   &kp LG(LS(LC(N3))) &kp LG(LS(LC(N4)))  &kp LBKT            &kp RBKT  &kp MINUS   &kp EQUAL   &kp SQT    &kp BSLH  &none
                                              &kp LCTL  &kp LALT   &kp BSLH                          &kp TAB  &kp EQUAL   &kp PLUS
             >;
         };
