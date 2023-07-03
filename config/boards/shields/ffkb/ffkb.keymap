@@ -64,6 +64,20 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+        tdclr: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&bt BT_CLR>;
+        };
+        tdrst: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&bootloader>;
+        };
         hs: homerow_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_SHIFT";
@@ -132,8 +146,8 @@
 
             bindings = <
     &kp GRAVE  &kp EXCL &kp AT &kp HASH  &kp DOLLAR &kp PRCNT                                      &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR    &kp EQUAL
-    &trans     &bt BT_CLR    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3                          &kp LEFT        &kp DOWN         &kp UP        &kp RIGHT   &kp SQT    &trans
-    &kp LSHIFT &trans   &trans       &trans      &trans       &bootloader                                &bootloader &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD     &trans
+    &trans     &tdclr    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3                          &kp LEFT        &kp DOWN         &kp UP        &kp RIGHT   &kp SQT    &trans
+    &kp LSHIFT &trans   &trans       &trans      &trans       &tdrst                                &tdrst &rgb_ug RGB_EFR  &rgb_ug RGB_EFF &rgb_ug RGB_BRI &rgb_ug RGB_BRD     &trans
                                              &trans        &kp LALT      &kp BSPC        &kp LC(LEFT)   &kp LC(UP)    &kp LC(RIGHT)     
             >;
         };
