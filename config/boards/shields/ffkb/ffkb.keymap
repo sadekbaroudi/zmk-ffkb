@@ -111,7 +111,7 @@
 
 
             bindings = <
-     &gresc     &kp Q         &kp W        &kp E       &kp R         &kp T                              &kp Y        &kp U          &kp I       &kp O         &kp P         &kp MINUS &none
+     &gresc     &kp Q         &kp W        &kp E       &kp R         &kp T                              &kp Y        &kp U          &kp I       &kp O         &kp P   &none
      &kp TAB    &lt OTH A  &lt SYM S   &lt NAV D &hs LSHIFT F  &kp G                                &mt LG(LALT) H  &hs LSHIFT J &lt NAV K &lt SYM L &lt OTH SEMI &none
     &kp LSHIFT &mt LSHIFT Z       &kp X     &mt LCTL C &mt LALT V &mt LGUI B              &mt RCTL N &mt RALT M &mt RGUI COMMA &kp DOT   &mt RSHIFT FSLH &none
                               &mt LSHFT UNDER  &kp LGUI  &mt LC(LS(LALT)) BSPC                      &mt LC(LS(LALT)) SPACE &mt LG(LC(LS(LALT))) ENTER  &mt RSHFT MINUS
