@@ -14,8 +14,9 @@ manifest:
     - name: zmk
       remote: petejohanson
       revision: feat/pointers-move-scroll
+      import: app/west.yml
     - name: cirque-input-module
       remote: petejohanson
       revision: main
-  self:
+   self:
     path: config
