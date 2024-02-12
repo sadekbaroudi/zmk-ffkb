@@ -10,6 +10,8 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
+        // for logging, remove later
+        // zephyr,console = &cdc_acm_uart;
     };
 
     //////  disable encoders for this build, since I'm using DR pin for cirque on encoder 2
@@ -82,8 +84,30 @@
         status = "okay";
         dr-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "2x";
+        sensitivity = "4x";
         sleep;
         no-taps;
     };
+
+    // Rotation config, from Pete
+    // This will change in the future
+    // https://discord.com/channels/719497620560543766/845285481888743434/1206407883777114182
+    input_config {
+        compatible = "zmk,input-configs";
+    
+        cirque_config {
+            device = <&glidepoint>;
+            xy-swap;
+            y-invert;
+            x-invert;
+        };
+    };
 };
+
+// for logging, remove later
+// &usbd {
+//     status = "okay";
+//     cdc_acm_uart: cdc_acm_uart {
+//         compatible = "zephyr,cdc-acm-uart";
+//     };
+// };
