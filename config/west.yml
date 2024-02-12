@@ -18,5 +18,5 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: main
-   self:
+  self:
     path: config
